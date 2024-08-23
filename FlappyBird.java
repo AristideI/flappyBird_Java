@@ -136,6 +136,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         if (gameOver) {
             g.drawString("Game Over", boardWidth / 2 - 100, boardHeight / 2);
             g.drawString("Score: " + (int) score, boardWidth / 2 - 100, boardHeight / 2 + 50);
+            g.drawString("Enter to start again!", boardWidth / 2 - 100, boardHeight / 2);
         } else {
             g.drawString("Score: " + (int) score, boardWidth / 2 - 100, 50);
         }
@@ -191,6 +192,9 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             // System.out.println("JUMP!");
             velocityY = -9;
 
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (gameOver) {
                 // restart game by resetting conditions
                 bird.y = birdY;
